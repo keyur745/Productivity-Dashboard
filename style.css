@@ -1,0 +1,679 @@
+:root{
+      --text: #F1EFEC;
+      --black: #0b0b0b;
+      --blue: #123458;
+      --tri2: #D4C9BE ;
+      --broun: #a55102 ;
+            /*  */
+}
+
+
+@font-face{
+      font-family: aeonik;
+      font-weight: 200;
+      src: url(./AeonikTRIAL-Light.otf);
+}
+@font-face{
+      font-family: aeonik;
+      font-weight: 500;
+      src: url(./AeonikTRIAL-Regular.otf);
+}
+@font-face{
+      font-family: aeonik;
+      font-weight: 700;
+      src: url(./AeonikTRIAL-Bold.otf);
+}
+
+@font-face{
+      font-family: cursy;
+      src: url(./Ranget.otf);
+}
+
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+html, body{
+      height: 100%;
+}
+
+.main{
+      width: 100%;
+      height: 100%;
+      background-color: var(--tri2);
+      color: var(--text);
+      font-family: aeonik;
+      position: relative;
+}
+
+nav{
+      height: 60px;
+      background-color: var(--black);
+}
+
+section.allElems{
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      overflow: auto;
+      position: absolute;
+}
+
+.allElems header{
+      height: 250px;
+      padding: 0px 30px;
+      /* background-color: var(--broun); */
+      background-image: url(https://images.pexels.com/photos/1723637/pexels-photo-1723637.jpeg);  
+                              /* ./img/Header.jpeg */
+      background-size: cover;
+      background-position: bottom;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text);
+
+}
+
+/* header .header1{
+      backdrop-filter: blur(5px);
+}
+header .header2{
+      backdrop-filter: blur(5px);
+} */
+
+.allElems header .header1 h1{
+      font-size: 80px;
+      font-weight: 900;
+}
+
+.header1 h4{
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 5px;
+      color: rgb(207, 207, 62);
+      font-family: cursy;
+}
+
+header .header2{
+      text-align: end;
+}
+.header2 h2{
+      font-size: 50px;
+      letter-spacing: 1px;
+      /* backdrop-filter: blur(5px); */
+}
+.header2 h4{
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+}
+.header2 h3{
+      color: var(--tri2);
+      /* font-family: cursy; */
+      font-size: 20px;
+      letter-spacing: 3px;
+      font-weight: 400;
+      backdrop-filter: blur(5px);
+      letter-spacing: 1px;
+}
+
+.allElems .allFeatures{
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+}
+
+.elem{
+      background-color: rgb(81, 81, 81);
+      width: 320px;
+      height: 340px;
+      border-radius: 20px;
+      font-size: 30px;
+      overflow: hidden;
+      position: relative;
+      transition: all ease .9s;
+      cursor: pointer;
+      /* box-shadow: 1px 5px 10px rgb(0, 0, 0); */
+
+}
+
+.elem img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      
+}
+
+.moti img{
+      transform: rotateY(180deg);
+}
+
+.elem h2{
+      position: absolute;
+      bottom: 5%;
+      left: 7%;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: all ease .6s;
+      text-shadow: 2px 2px 10px black;
+}
+.elem:hover h2{
+      font-size: 1.7rem;
+      color: white;
+}
+
+.elem:active{
+      scale: .95;
+}
+
+
+.fullElem{
+      width: 100%;
+      height: 100%;
+      padding: 15px 100px;
+      background-color: var(--black);
+      color: var(--text);
+      display: none;
+      position: absolute;
+}
+
+/* .fullElem h1{
+      font-size: 5rem;
+      font-weight: 600;
+} */
+
+.fullElem .back{
+      position: absolute;
+      top: 30px;
+      right: 0px;
+      background-color: rgb(193, 41, 41);
+      color: var(--text);
+      padding: 10px 20px;
+      border-radius: 5px 0px 0px 5px;
+      border: none;
+      font-size: 1.3rem;
+      font-weight: 300;
+      cursor: pointer;
+}     
+.fullElem .back:hover{
+      background-color: red;
+}
+.back:active{
+      scale: .95;
+}
+
+
+/* todo list fullpage */
+
+.todo-list-fullpage{
+      background-color: var(--black);
+}
+
+.todo-list-fullpage h2{
+      font-size: 50px;
+      color: #efefef;
+      font-weight: 200;
+}
+.todo-list-fullpage h2 .hilight{
+      font-size: 70px;
+      font-weight: 900;
+      color: var(--broun);
+}
+
+.todo-list-fullpage .todo-container{
+      width: 100%;
+      height: 75%;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask{
+      width: 35%;
+      height: 100%;
+      background-color: #252525;
+      border-radius: 20px;
+}
+
+.todo-list-fullpage .todo-container .addTask form{
+      width: 100%;
+      padding:30px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* gap: 20px; */
+}
+
+.addTask form input#task-input{
+      width: 100%;
+      font-family: aeonik;
+      padding: 12px 25px;
+      border: none;
+      font-size: 20px;
+      font-weight: 500;
+      outline: none;
+      margin-bottom: 5px;
+      color: rgb(255, 255, 255);
+      border-radius: 5px;
+      background-color: var(--black);
+}
+form input#task-input::placeholder{
+      font-size: 1.3rem;
+}
+
+.addTask form .mess{
+      color: transparent;
+      padding: 0px 10px;
+      margin-bottom: 10px;
+}
+.addTask form .show-mess{
+      font-size: 1rem;
+      font-weight: 200;
+      color: rgb(252, 30, 30);
+      letter-spacing: 1px;
+      padding: 0px 10px;
+      margin-bottom: 15px;
+}
+
+
+.addTask form textarea{
+      width: 100%;
+      font-family: aeonik;
+      padding: 15px 25px;
+      border: none;
+      font-size: 20px;
+      font-weight: 500;
+      outline: none;
+      margin-bottom: 25px;
+      /* height: 250px; */
+      border-radius: 5px;
+      color: #fff;
+      background-color: var(--black);
+}
+
+.addTask form .mark-imp{
+      padding: 5px 10px;
+      display: flex;
+      gap: 25px;
+      margin-bottom: 25px;
+      font-size: 1.2rem;
+}
+form .mark-imp input#check{
+      scale: 1.7;
+}
+
+
+.addTask form button{
+      width: 100%;
+      font-family: aeonik;
+      padding: 10px 25px;
+      border: none;
+      font-size: 20px;
+      font-weight: 700;
+      outline: none;
+      margin-bottom: 20px;
+      background-color: var(--broun);
+                        /* rgb(67, 67, 239) */
+      color: #e6e6e6;
+      border-radius: 5px;
+}
+.addTask form button:active{
+      scale: .95;
+}
+
+
+.todo-list-fullpage .todo-container .allTask{
+      width: 62%;
+      height: 100%;
+      padding: 30px;
+      background-color: #252525;  
+      /* box-shadow: 0px 5px 50px black; */
+      border-radius: 20px; 
+      overflow: auto;
+}
+
+.allTask .task{
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient( to right, #602f00, #7a3b00, var(--broun));
+      margin-bottom: 20px;
+      box-shadow: 1px 1px 15px black;
+}
+
+.task h3{
+      font-size: 1.4rem;
+      font-weight: 400;
+      display: flex;
+      align-items: start;
+}
+.task h3 span{
+      background-color: rgb(93, 255, 68);
+      color: #000000;
+      /* letter-spacing: 1px; */
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 6px;
+      margin-left: 10px;
+      border-radius: 50px;
+}
+.task h3 span.true{
+      opacity: 1;
+}
+.task h3 span.false{
+      opacity: 0;
+}
+
+.task button{
+      padding: 9px 12px;
+      border-radius: 5px;
+      border: none;
+      font-family: aeonik;
+      font-size: 1.1rem;
+      background-color: rgb(1, 1, 1);
+      color: #b3b2b2;
+}
+.task button:active{
+      scale: .95;
+}
+
+
+
+/* daily-planner-fullpage */
+
+/* .daily-planner-fullpage{
+      w & h allready given 
+      display: block;   
+} */
+
+.daily-planner-fullpage h2{
+      font-size: 45px;
+      color: #ffffff;
+      font-weight: 200;
+}
+.daily-planner-fullpage h2 .hilight{
+      font-size: 70px;
+      font-weight: 900;
+      color: var(--broun);
+}
+
+.daily-planner-fullpage .day-planner{
+      width: 100%;
+      height: 75%;
+      padding: 35px 20px;
+      margin-top: 25px;
+      background-color: #303030;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      overflow: auto;
+      scrollbar-color: var(--black);
+      
+}
+
+.day-planner .day-planner-time{
+      width: 49%;
+      height: fit-content;
+      background: linear-gradient( to right, #602f00, #7a3b00, var(--broun));
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+}
+
+.day-planner-time p{
+      width: 21%;
+      background-color: black;
+      color: var(--tri2);
+      padding: 17px 11px;
+      font-size: 14px;
+      font-weight: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      /* border-left: 2px solid gray; */
+}
+
+/* .day-planner-time p small{
+      font-weight: 400;
+} */
+
+.day-planner-time input{
+      width: 100%;
+      background: linear-gradient( to right, #602f00, #7a3b00, var(--broun));
+      background-color: var(--broun);
+      color: white;
+      padding: 19px 20px;
+      font-size: 25px;
+      border: none;
+      outline: none;
+}
+
+input::placeholder{
+      /* color: #ffffff; */
+      font-size: xx-large;
+}
+
+
+
+/* Motivational Quate */
+
+.motivational-fullpage{
+      /* display: block; */
+      position: relative;
+      
+}
+
+.motivational-fullpage h1{
+      font-size: 70px;
+      color: #ffffff;
+      font-weight: 200;
+      margin-top: 10px;
+}
+.motivational-fullpage h1 .hilight{
+      font-size: 75px;
+      font-weight: 900;
+      color: var(--broun);
+}
+
+.motivational-fullpage .quote-Container{
+      position: absolute;
+      z-index: 2;
+      padding: 20px 30px;
+      /* border-radius: 10px; */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--broun);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+}
+
+.quote-Container .motivation-quote1{
+      width: 100%;
+      height: fit-content;
+      padding: 20px 30px;
+      font-size: 3rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: flex-end;
+
+}
+
+.quote-Container .author{
+      width: 100%;
+      height: fit-content;
+      padding: 10px 10px;
+      font-size: 1.5rem;
+      font-weight: 100;
+      display: flex;
+      justify-content: flex-end;
+}
+
+.motivational-fullpage img{
+      position: absolute;
+      scale: 1.5;
+      top: 100px;
+      right: 13%;
+      opacity: .4;
+}
+
+.motivational-fullpage .blur-effect-top-left{
+      position: absolute;
+      z-index: 3;
+      width: 100px;
+      height: 100px;
+      /* border-radius: 50%; */
+      filter: blur(70px);
+      background-color: rgb(189, 170, 145);
+      /* background: linear-gradient(to right, #d4c9be80, #d4c9be43) ; */
+      top: 29%;
+      left: 24%;
+}
+
+.motivational-fullpage .blur-effect-right{
+      position: absolute;
+      z-index: 3;
+      width: 120px;
+      height: 120px;
+      /* border-radius: 50%; */
+      filter: blur(70px);
+      background-color: rgb(182, 148, 104);
+      /* background: linear-gradient(to right, #d4c9be80, #d4c9be43) ; */
+      bottom: 29%;
+      right: 37%;
+}
+
+
+.motivational-fullpage .date {
+      /* z-index: 1; */
+      position: absolute;
+      font-size: 1rem;
+      background: linear-gradient(to right, #a55102ad, #a5510282, #d4c9be00) ;
+      color: #fff;
+      bottom: 80px;
+      padding: 4px 15px;
+      font-weight: 200;
+      letter-spacing: 3px;
+}
+
+
+/* Pomodoro Timer CSS */
+
+.pomodoro-fullpage {
+      font-family: Aeonik;
+      /* display: block; */
+      position: relative;
+}
+
+.pomodoro-fullpage h1{
+      font-size: 75px;
+      font-weight: 900;
+      color: var(--broun);
+}
+.pomodoro-fullpage h3{
+      font-family: cursy;
+      position: absolute;
+      writing-mode: sideways-lr;
+      top: 20%;
+      font-size: 100px;
+      letter-spacing: 3px;
+      font-weight: 900;
+      opacity: .3;
+      color: var(--tri2);
+}
+
+.pomodoro-fullpage .pomo-timer{
+      position: absolute;
+      width: 800px;
+      height: 450px;
+      left: 50%;
+      top: 50%;
+      padding: 10px 30px;
+      transform: translate(-50%, -50%);
+      /* background-color: var(--tri2); */
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+}
+
+.pomo-timer .session{
+      position: absolute;
+      top: 12%;
+      left: 47%;
+      font-size: 1.5rem;
+      font-family: Aeonik;
+      font-weight: 600;
+      padding: 8px 20px;
+      background-color: #2f3d3c;
+      color: #0e9664; 
+      border-radius: 5px;
+      text-align: end;
+}
+
+.pomo-timer h2{
+      /* padding: 10px 10px; */
+      text-align: center;
+      width: 350px;
+      border-radius: 20px;
+      font-size: 7rem;
+      background-color: #0064fb;
+      /* background: linear-gradient( to right, #602f00, #7a3b00, var(--broun)); */
+      color: var(--text);
+      margin-bottom: 20px;
+}
+
+.pomo-timer .start-btn{
+      display: flex;
+      gap: 25px;
+}
+
+.pomo-timer .start-btn button{
+      padding: 10px 30px;
+      border-radius: 5px;
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      /* box-shadow: 3px 3px 0px grey; */
+      cursor: pointer;
+      transition: all ease .3s;
+      color: black;
+}
+
+.start-btn .start-timer{
+      background-color: #57be55;
+      box-shadow: 4px 4px 0px rgb(191, 232, 163);
+}
+.start-btn .pause-timer{
+      background-color: #bf5555;
+      box-shadow: 4px 4px 0px rgb(241, 177, 177);
+}
+.start-btn .reset-timer{
+      background-color: rgb(94, 114, 213);
+      box-shadow: 4px 4px 0px rgb(177, 187, 240);
+}
+
+.pomo-timer .start-btn button:active{
+      background-color: #d4d4d4;
+      box-shadow: 0px 0px 0px black;
+
+}

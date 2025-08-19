@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="shortcut icon" href="./img/android-chrome-192x192.png" type="image/x-icon">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- <nav>
+
+           </nav> -->
+
+      <section class="allElems">
+
+            <header>
+                  <div class="header1">
+                        <h1>Saturday, 1:00 pm</h1>
+                        <h4>Mehsana, Gujarat</h4>
+                  </div>
+
+                  <div class="header2">
+                        <h2>20°C</h2>
+                        <h4>Light rain</h4>
+                        <h3>Precipitation : 35%</h3>
+                        <h3>Humidity : 49%</h3>
+                        <h3>Wind : 10km/h</h3>
+                  </div>
+            </header>
+
+        
+            <div class="allFeatures">
+
+                  <div class="todo elem" id="0">
+                        <img
+                              src="./img/Todo.jpeg"
+                              alt=""
+                        />
+                        <h2>To Do List</h2>
+                  </div>
+
+                  <div class="daily elem" id="1">
+                        <img
+                              src="./img/Day-planner.jpeg"
+                              alt=""
+                        />
+                        <h2>Day Planner</h2>
+                  </div>
+
+                  <div class="moti elem" id="2">
+                        <img
+                              src="./img/Motivation.jpeg"
+                              alt=""
+                        />
+                        <h2>Motivation</h2>
+                  </div>
+                  
+                  <div class="pomo elem" id="3">
+                        <img
+                              src="./img/Pomodoro.jpeg"
+                              alt=""
+                        />
+                        <h2>Pomodoro Timer</h2>
+                  </div>
+
+            </div>
+
+
+      </section>
+
+      <section class="fullElem todo-list-fullpage">
+        <button class="back" id="0">Close</button>
+        <h2>Your Personalised <br /><span class="hilight">Task List</span></h2>
+        <div class="todo-container">
+          <div class="addTask">
+            <form>
+              <input id="task-input" type="text" placeholder="Enter Task" />
+              <small class="mess" id="message">Task can not be Empty!</small>
+              <textarea
+                name=""
+                placeholder="Enter Details"
+                cols="30"
+                rows="10"
+                id=""
+              ></textarea>
+              <div class="mark-imp">
+                <input type="checkbox" name="" id="check" />
+                <label for="check">Mark as Important !</label>
+              </div>
+              <button>Add Task</button>
+            </form>
+          </div>
+          <div class="allTask">
+            <!-- js -->
+          </div>
+        </div>
+      </section>
+
+      <section class="fullElem daily-planner-fullpage">
+        <button class="back" id="1">Close</button>
+        <h2>Plan your day to<br> <span class="hilight">Be More Productive</span> </h2>
+
+        <div class="day-planner">
+            <!-- <div class="day-planner-time">
+                  <p>6:00-7:00 <small>AM</small></p>
+                  <input type="text" placeholder=".........">
+            </div> -->
+        </div>
+      </section>
+
+      <section class="fullElem motivational-fullpage">
+            <button class="back" id="2">Close</button>
+            <h1> <Span class="hilight">Quate </Span> <small>of the Day</small> </h1>
+            <div class="blur-effect-top-left"> </div>
+            <img src="./icons8-quotes-100.png" alt="" srcset="">
+            <div class="quote-Container">
+                  <div class="motivation-quote1">Simplicity is the ultimate sophistication.
+                  </div>      
+                  <div class="author">-Leonardo da vinci</div>
+            </div>
+            <div class="blur-effect-right"> </div>
+            <h3 class="date"></h3>
+      </section>
+
+      <section class="fullElem pomodoro-fullpage">
+        <button class="back" id="3">Close</button>
+        <h1>Pomodoro Timer</h1>
+        <h3>Study with Me!</h3>
+
+        <div class="pomo-timer">
+            <!-- <img src="https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg" alt="">  -->
+                  <div class="session">Work Session</div>
+                  <h2>25:00</h2>
+                  <div class="start-btn">
+                        <button class="start-timer">Start</button>
+                        <button class="pause-timer">Pause</button>
+                        <button class="reset-timer">Reset</button>
+                  </div>
+            
+        </div>
+      </section>
+
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
