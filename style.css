@@ -1,9 +1,12 @@
 :root{
       --text: #F1EFEC;
-      --black: #0b0b0b;
+      --black: #151515;
       --blue: #123458;
       --tri2: #D4C9BE ;
       --broun: #a55102 ;
+      --gray: #252525;
+      --gradient: #602f00, #7a3b00, #a55102;
+      --gradient2: #a55102ad, #a5510282, #d4c9be00 ;
             /*  */
 }
 
@@ -42,39 +45,67 @@ html, body{
 .main{
       width: 100%;
       height: 100%;
-      background-color: var(--tri2);
+      background-color: var(--black);
       color: var(--text);
       font-family: aeonik;
       position: relative;
 }
 
-nav{
-      height: 60px;
-      background-color: var(--black);
-}
-
 section.allElems{
       width: 100%;
       height: 100%;
-      padding: 30px;
+      padding: 30px 60px;
       overflow: auto;
       position: absolute;
 }
 
+.allElems nav{
+      /* height: 60px; */
+      padding: 13px 40px;
+      border-radius: 40px;
+      margin-bottom: 30px;
+      background-color: var(--tri2);
+      color: var(--black);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+nav h2{
+      font-size: 30px;
+      font-weight: bolder;
+}
+
+nav i{
+      background-color: var(--black);
+      color: var(--text);
+      border-radius: 50%;
+      padding: 8px 10px;
+      font-size: 20px;
+      font-weight: 900;
+      transition: all ease .2s;
+      cursor: pointer;
+}
+nav i:active{
+      scale: .95;
+}
+
 .allElems header{
-      height: 250px;
-      padding: 0px 30px;
+      /* height: 250px; */
+      padding: 30px 50px;
       /* background-color: var(--broun); */
       background-image: url(https://images.pexels.com/photos/1723637/pexels-photo-1723637.jpeg);  
                               /* ./img/Header.jpeg */
       background-size: cover;
       background-position: bottom;
-      border-radius: 20px;
-      margin-bottom: 40px;
+      border-radius: 40px;
+      margin-bottom: 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: var(--text);
+      color: #ffffff;
+      opacity: .95;
+      border: 1px solid #D4C9BE;
 
 }
 
@@ -86,62 +117,80 @@ header .header2{
 } */
 
 .allElems header .header1 h1{
-      font-size: 80px;
+      font-size: 60px;
       font-weight: 900;
+      margin-bottom: 40px;
+}
+
+.allElems header .header1 h2{
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: 2px;
 }
 
 .header1 h4{
       font-size: 40px;
       font-weight: 400;
       letter-spacing: 5px;
-      color: rgb(207, 207, 62);
+      color: #cfcf3e;
       font-family: cursy;
 }
 
 header .header2{
-      text-align: end;
+      text-align: start;
 }
 .header2 h2{
-      font-size: 50px;
+      font-size: 60px;
       letter-spacing: 1px;
       /* backdrop-filter: blur(5px); */
 }
 .header2 h4{
       font-size: 30px;
       font-weight: 400;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+      /* letter-spacing: 1px; */
+      margin-top: -10px;
+      margin-bottom: 40px;
 }
 .header2 h3{
-      color: var(--tri2);
+      color: #D4C9BE;
       /* font-family: cursy; */
-      font-size: 20px;
-      letter-spacing: 3px;
+      font-size: 18px;
+      letter-spacing: 1px;
       font-weight: 400;
       backdrop-filter: blur(5px);
-      letter-spacing: 1px;
 }
 
 .allElems .allFeatures{
       display: flex;
-      gap: 40px;
+      gap: 25px;
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: center;
 }
 
 .elem{
-      background-color: rgb(81, 81, 81);
-      width: 320px;
-      height: 340px;
-      border-radius: 20px;
+      /* background-color: rgb(81, 81, 81); */
+      width: 300px;
+      height: 300px;
+      border-radius: 40px;
       font-size: 30px;
       overflow: hidden;
       position: relative;
       transition: all ease .9s;
       cursor: pointer;
-      /* box-shadow: 1px 5px 10px rgb(0, 0, 0); */
 
+}
+
+.elem i{
+      position: absolute;
+      z-index: 10;
+      right: 6%;
+      top: 6%;
+      padding: 2px 2px;
+      border-radius: 50%;
+      background-color: white;
+      opacity: .3;
+      color: black;
 }
 
 .elem img{
@@ -150,12 +199,27 @@ header .header2{
       object-fit: cover;      
 }
 
-.moti img{
+.todo img{
       transform: rotateY(180deg);
+      object-position: bottom;
+}
+.daily img{
+      transform: rotateX(180deg);
+      /* transform: rotateY(180deg); */
+      object-position: bottom;
+}
+.moti img{
+      transform: rotateX(180deg);
+      object-position: bottom;
+}
+.pomo img{
+      transform: rotateY(180deg);
+      object-position: center;
 }
 
 .elem h2{
       position: absolute;
+      color: #dcdcdc;
       bottom: 5%;
       left: 7%;
       font-size: 1.5rem;
@@ -193,7 +257,7 @@ header .header2{
       top: 30px;
       right: 0px;
       background-color: rgb(193, 41, 41);
-      color: var(--text);
+      color: #F1EFEC;
       padding: 10px 20px;
       border-radius: 5px 0px 0px 5px;
       border: none;
@@ -217,7 +281,7 @@ header .header2{
 
 .todo-list-fullpage h2{
       font-size: 50px;
-      color: #efefef;
+      color: var(--text);
       font-weight: 200;
 }
 .todo-list-fullpage h2 .hilight{
@@ -237,7 +301,7 @@ header .header2{
 .todo-list-fullpage .todo-container .addTask{
       width: 35%;
       height: 100%;
-      background-color: #252525;
+      background-color: var(--gray);
       border-radius: 20px;
 }
 
@@ -259,7 +323,7 @@ header .header2{
       font-weight: 500;
       outline: none;
       margin-bottom: 5px;
-      color: rgb(255, 255, 255);
+      color: var(--text);
       border-radius: 5px;
       background-color: var(--black);
 }
@@ -293,7 +357,7 @@ form input#task-input::placeholder{
       margin-bottom: 25px;
       /* height: 250px; */
       border-radius: 5px;
-      color: #fff;
+      color: var(--text);
       background-color: var(--black);
 }
 
@@ -303,6 +367,7 @@ form input#task-input::placeholder{
       gap: 25px;
       margin-bottom: 25px;
       font-size: 1.2rem;
+      color: var(--text);
 }
 form .mark-imp input#check{
       scale: 1.7;
@@ -332,7 +397,7 @@ form .mark-imp input#check{
       width: 62%;
       height: 100%;
       padding: 30px;
-      background-color: #252525;  
+      background-color: var(--gray);  
       /* box-shadow: 0px 5px 50px black; */
       border-radius: 20px; 
       overflow: auto;
@@ -345,7 +410,7 @@ form .mark-imp input#check{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient( to right, #602f00, #7a3b00, var(--broun));
+      background: linear-gradient( to right, var(--gradient));  
       margin-bottom: 20px;
       box-shadow: 1px 1px 15px black;
 }
@@ -355,6 +420,7 @@ form .mark-imp input#check{
       font-weight: 400;
       display: flex;
       align-items: start;
+      color: #ffffff;
 }
 .task h3 span{
       background-color: rgb(93, 255, 68);
@@ -397,7 +463,7 @@ form .mark-imp input#check{
 
 .daily-planner-fullpage h2{
       font-size: 45px;
-      color: #ffffff;
+      color: var(--text);
       font-weight: 200;
 }
 .daily-planner-fullpage h2 .hilight{
@@ -411,7 +477,7 @@ form .mark-imp input#check{
       height: 75%;
       padding: 35px 20px;
       margin-top: 25px;
-      background-color: #303030;
+      background-color: var(--gray);
       border-radius: 10px;
       display: flex;
       align-items: flex-start;
@@ -426,7 +492,7 @@ form .mark-imp input#check{
 .day-planner .day-planner-time{
       width: 49%;
       height: fit-content;
-      background: linear-gradient( to right, #602f00, #7a3b00, var(--broun));
+      background: linear-gradient( to right, var(--gradient));
       border-radius: 5px;
       overflow: hidden;
       display: flex;
@@ -437,7 +503,7 @@ form .mark-imp input#check{
 .day-planner-time p{
       width: 21%;
       background-color: black;
-      color: var(--tri2);
+      color: #D4C9BE;
       padding: 17px 11px;
       font-size: 14px;
       font-weight: 100;
@@ -454,9 +520,9 @@ form .mark-imp input#check{
 
 .day-planner-time input{
       width: 100%;
-      background: linear-gradient( to right, #602f00, #7a3b00, var(--broun));
+      background: linear-gradient( to right, var(--gradient));
       background-color: var(--broun);
-      color: white;
+      color: #fff;
       padding: 19px 20px;
       font-size: 25px;
       border: none;
@@ -480,7 +546,7 @@ input::placeholder{
 
 .motivational-fullpage h1{
       font-size: 70px;
-      color: #ffffff;
+      color: var(--text);
       font-weight: 200;
       margin-top: 10px;
 }
@@ -499,6 +565,7 @@ input::placeholder{
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: var(--broun);
+      color: #D4C9BE;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -523,6 +590,7 @@ input::placeholder{
       font-weight: 100;
       display: flex;
       justify-content: flex-end;
+      color: #F1EFEC;
 }
 
 .motivational-fullpage img{
@@ -540,7 +608,7 @@ input::placeholder{
       height: 100px;
       /* border-radius: 50%; */
       filter: blur(70px);
-      background-color: rgb(189, 170, 145);
+      background-color: var(--broun);
       /* background: linear-gradient(to right, #d4c9be80, #d4c9be43) ; */
       top: 29%;
       left: 24%;
@@ -553,7 +621,7 @@ input::placeholder{
       height: 120px;
       /* border-radius: 50%; */
       filter: blur(70px);
-      background-color: rgb(182, 148, 104);
+      background-color: var(--broun);
       /* background: linear-gradient(to right, #d4c9be80, #d4c9be43) ; */
       bottom: 29%;
       right: 37%;
@@ -564,7 +632,7 @@ input::placeholder{
       /* z-index: 1; */
       position: absolute;
       font-size: 1rem;
-      background: linear-gradient(to right, #a55102ad, #a5510282, #d4c9be00) ;
+      background: linear-gradient(to right, var(--gradient2)) ;
       color: #fff;
       bottom: 80px;
       padding: 4px 15px;
@@ -606,7 +674,7 @@ input::placeholder{
       top: 50%;
       padding: 10px 30px;
       transform: translate(-50%, -50%);
-      /* background-color: var(--tri2); */
+      /* background-color: var(--broun); */
       border-radius: 50px;
       display: flex;
       flex-direction: column;
@@ -618,13 +686,13 @@ input::placeholder{
 
 .pomo-timer .session{
       position: absolute;
-      top: 12%;
-      left: 47%;
+      top: 10%;
+      left: 50%;
       font-size: 1.5rem;
       font-family: Aeonik;
       font-weight: 600;
       padding: 8px 20px;
-      background-color: #2f3d3c;
+      background-color: var(--gray);
       color: #0e9664; 
       border-radius: 5px;
       text-align: end;
@@ -633,12 +701,12 @@ input::placeholder{
 .pomo-timer h2{
       /* padding: 10px 10px; */
       text-align: center;
-      width: 350px;
+      width: 400px;
       border-radius: 20px;
-      font-size: 7rem;
-      background-color: #0064fb;
+      font-size: 8rem;
+      background-color: var(--broun);
       /* background: linear-gradient( to right, #602f00, #7a3b00, var(--broun)); */
-      color: var(--text);
+      color: #F1EFEC;
       margin-bottom: 20px;
 }
 

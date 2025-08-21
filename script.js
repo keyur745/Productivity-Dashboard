@@ -327,19 +327,112 @@ function pomodoroTimer() {
 pomodoroTimer();
 
 
-let city = "Mehsana";
-let apiKey = "0fd10bb45e574a3cb8a163443251908";
+//  Header Secssion
+function WeatherDisplay() {
+            
+      let header2Temp = document.querySelector("header .header2 h2");
+      let header2Info = document.querySelector("header .header2 h4");
+      let header2Visibility = document.querySelector("header .header2 .visibility");
+      let header2Humidity = document.querySelector("header .header2 .humidity");
+      let header2Wind = document.querySelector("header .header2 .wind");
+      let header1Place = document.querySelector("header .header1 h4");
 
-// API Key: 0fd10bb45e574a3cb8a163443251908
+      let city = "Ahmedabad";
+      // API Key: 0fd10bb45e574a3cb8a163443251908  of  api = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
 
-
-async function weatherAPICall() {
+      async function weatherAPICall() {
       let responce = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${"5b49f7dd7d71492a9cefb52bcbc3cd86"}`
       );
       let data = await responce.json();
-
       // console.log(data);
-      
+
+      header1Place.innerHTML = `Ahmedabad, Gujarat`;
+      header2Temp.innerHTML = `${(data.main.temp - 273.15).toFixed(1)}°C`;
+      header2Info.innerHTML = `${data.weather[0].description}`;
+      header2Visibility.innerHTML = `Visibility : ${data.visibility / 1000}  km `;
+      header2Humidity.innerHTML = `Humidity : ${data.main.humidity}%`;
+      header2Wind.innerHTML = `Wind : ${data.wind.speed} km/h`;
+      }
+      weatherAPICall();
+
+      let header1H1 = document.querySelector("header .header1 h1");
+      let header1H2 = document.querySelector("header .header1 h2");
+
+      let date = null;
+
+      function timeDate() {
+            const now = new Date();
+
+            const weekday = now.toLocaleString("en-US", { weekday: "long" });
+
+            const day = now.getDate();
+
+            const month = now.toLocaleString("en-US", { month: "long" });
+            const year = now.getFullYear();
+
+            // Time parts
+            const hour = now.getHours().toString().padStart(2, "0");
+            const minute = now.getMinutes().toString().padStart(2, "0");
+            const second = now.getSeconds().toString().padStart(2, "0");
+
+            header1H2.innerHTML = `${month} ${day}, ${year}`;
+
+            if (hour <= 12) {
+                  header1H1.innerHTML = `${weekday}, ${hour}:${minute}:${second} am`;
+            } else {
+                  header1H1.innerHTML = `${weekday}, ${hour - 12}:${minute}:${second} pm`;
+            }
+      }
+
+      setInterval(() => {
+      timeDate();
+      }, 1000);
 }
-weatherAPICall();
+WeatherDisplay();
+
+
+
+let rootElement =  document.documentElement
+
+let theme = document.querySelector('.allElems nav i')
+
+// console.log(rootElement);
+
+theme.addEventListener('click', function() {
+      // --text: #F1EFEC;
+      // --black: #151515;
+      // --blue: #123458;
+      // --tri2: #D4C9BE ;
+      // --broun: #a55102 ;
+      // --gray: #252525;
+      
+
+      if (theme.classList[0] == "ri-sun-line"){
+            theme.classList.remove("ri-sun-line");
+            theme.classList.add("ri-moon-line");
+
+            rootElement.style.setProperty("--text", "#000");
+            rootElement.style.setProperty("--black", "#fff");
+            rootElement.style.setProperty("--blue", "#D4C9BE");
+            rootElement.style.setProperty("--tri2", "#123458");
+            rootElement.style.setProperty("--gray", "#D4C9BE");
+            rootElement.style.setProperty("--broun", "#123458");
+            rootElement.style.setProperty("--gradient", "#123458, #1c4e85, #2364aa");
+            rootElement.style.setProperty("--gradient2", "#123458b3, #1234586f, #bfcbd70f");
+      }
+      else{
+            theme.classList.remove("ri-moon-line");
+            theme.classList.add("ri-sun-line");
+
+            rootElement.style.setProperty("--text", "#F1EFEC");
+            rootElement.style.setProperty("--black", "#151515");
+            rootElement.style.setProperty("--blue", "#123458");
+            rootElement.style.setProperty("--tri2", "#D4C9BE");
+            rootElement.style.setProperty("--broun", "#a55102");
+            rootElement.style.setProperty("--gray", "#252525");
+             rootElement.style.setProperty("--gradient", "#602f00, #7a3b00, #a55102");
+            rootElement.style.setProperty("--gradient2", "#a55102ad, #a5510282, #d4c9be00 ");
+      }
+      
+})
