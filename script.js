@@ -136,6 +136,9 @@ DailyPlanner(); // call to DailyPalnner Function
 
 
 // Motivational Quotes
+
+let motibtn = document.querySelector(".allFeatures .moti");
+
 function motivationalQuote() {
   const quotes = [
     { quote: "Stay hungry, stay foolish.", author: "Steve Jobs" },
@@ -197,25 +200,13 @@ function motivationalQuote() {
   ];
 
   let date = document.querySelector(".motivational-fullpage .date");
-  let back = document.querySelector(".back#\\32");
+//   let back = document.querySelector(".back#\\32");
+  
 
-    back.addEventListener("click", function () {
-            window.location.reload();
-    });
-
-  let motivationQuote = document.querySelector(
-    ".quote-Container .motivation-quote1"
-  );
+  let motivationQuote = document.querySelector(".quote-Container .motivation-quote1");
   let author = document.querySelector(".quote-Container .author");
 
-  function randomNo() {
     let random = Math.floor(Math.random() * 20);
-    return random;
-  }
-
-  function fetchQuote() {
-    let random = randomNo();
-    // console.log(random);
 
     let data = quotes[random];
 
@@ -229,12 +220,11 @@ function motivationalQuote() {
     });
     date.innerHTML = Todaydate;
 
-  }
-
-  fetchQuote();
-
 }
-motivationalQuote();
+motibtn.addEventListener("click", function () {
+      // window.location.reload();
+      motivationalQuote();
+});
 
 
 // Pomodoro Timer
@@ -393,46 +383,50 @@ WeatherDisplay();
 
 
 
-let rootElement =  document.documentElement
+//  Dark/Light Mode
+function changeTheme() {
+      let rootElement =  document.documentElement
 
-let theme = document.querySelector('.allElems nav i')
+      let theme = document.querySelector('.allElems nav i')
 
-// console.log(rootElement);
+      // console.log(rootElement);
 
-theme.addEventListener('click', function() {
-      // --text: #F1EFEC;
-      // --black: #151515;
-      // --blue: #123458;
-      // --tri2: #D4C9BE ;
-      // --broun: #a55102 ;
-      // --gray: #252525;
-      
+      theme.addEventListener('click', function() {
+            // --text: #F1EFEC;
+            // --black: #151515;
+            // --blue: #123458;
+            // --tri2: #D4C9BE ;
+            // --broun: #a55102 ;
+            // --gray: #252525;
+            
 
-      if (theme.classList[0] == "ri-sun-line"){
-            theme.classList.remove("ri-sun-line");
-            theme.classList.add("ri-moon-line");
+            if (theme.classList[0] == "ri-sun-line"){
+                  theme.classList.remove("ri-sun-line");
+                  theme.classList.add("ri-moon-line");
 
-            rootElement.style.setProperty("--text", "#000");
-            rootElement.style.setProperty("--black", "#fff");
-            rootElement.style.setProperty("--blue", "#D4C9BE");
-            rootElement.style.setProperty("--tri2", "#123458");
-            rootElement.style.setProperty("--gray", "#D4C9BE");
-            rootElement.style.setProperty("--broun", "#123458");
-            rootElement.style.setProperty("--gradient", "#123458, #1c4e85, #2364aa");
-            rootElement.style.setProperty("--gradient2", "#123458b3, #1234586f, #bfcbd70f");
-      }
-      else{
-            theme.classList.remove("ri-moon-line");
-            theme.classList.add("ri-sun-line");
+                  rootElement.style.setProperty("--text", "#000");
+                  rootElement.style.setProperty("--black", "#fff");
+                  rootElement.style.setProperty("--blue", "#D4C9BE");
+                  rootElement.style.setProperty("--tri2", "#123458");
+                  rootElement.style.setProperty("--gray", "#D4C9BE");
+                  rootElement.style.setProperty("--broun", "#123458");
+                  rootElement.style.setProperty("--gradient", "#123458, #1c4e85, #2364aa");
+                  rootElement.style.setProperty("--gradient2", "#123458b3, #1234586f, #bfcbd70f");
+            }
+            else{
+                  theme.classList.remove("ri-moon-line");
+                  theme.classList.add("ri-sun-line");
 
-            rootElement.style.setProperty("--text", "#F1EFEC");
-            rootElement.style.setProperty("--black", "#151515");
-            rootElement.style.setProperty("--blue", "#123458");
-            rootElement.style.setProperty("--tri2", "#D4C9BE");
-            rootElement.style.setProperty("--broun", "#a55102");
-            rootElement.style.setProperty("--gray", "#252525");
-             rootElement.style.setProperty("--gradient", "#602f00, #7a3b00, #a55102");
-            rootElement.style.setProperty("--gradient2", "#a55102ad, #a5510282, #d4c9be00 ");
-      }
-      
-})
+                  rootElement.style.setProperty("--text", "#F1EFEC");
+                  rootElement.style.setProperty("--black", "#151515");
+                  rootElement.style.setProperty("--blue", "#123458");
+                  rootElement.style.setProperty("--tri2", "#D4C9BE");
+                  rootElement.style.setProperty("--broun", "#a55102");
+                  rootElement.style.setProperty("--gray", "#252525");
+                  rootElement.style.setProperty("--gradient", "#602f00, #7a3b00, #a55102");
+                  rootElement.style.setProperty("--gradient2", "#a55102ad, #a5510282, #d4c9be00 ");
+            }
+      })
+}
+
+changeTheme()
